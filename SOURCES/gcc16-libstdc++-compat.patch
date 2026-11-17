@@ -8907,10 +8907,10 @@
 +
 +#include "../c++17/floating_from_chars.cc"
 +#if defined(__i386__) || (defined(__powerpc__) && !defined(__powerpc64__))
-+asm (".hidden _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcENSt3pmr21polymorphic_allocatorIcEEE9_M_createERjj");
++//asm (".hidden _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcENSt3pmr21polymorphic_allocatorIcEEE9_M_createERjj");
 +asm (".hidden _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcENSt3pmr21polymorphic_allocatorIcEEE9_M_mutateEjjPKcj");
 +#else
-+asm (".hidden _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcENSt3pmr21polymorphic_allocatorIcEEE9_M_createERmm");
++//asm (".hidden _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcENSt3pmr21polymorphic_allocatorIcEEE9_M_createERmm");
 +asm (".hidden _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcENSt3pmr21polymorphic_allocatorIcEEE9_M_mutateEmmPKcm");
 +#endif
 +#if defined(__s390x__) || defined(__powerpc64__)
@@ -8964,11 +8964,11 @@
 +//asm (".hidden _ZSt10from_charsIiENSt9enable_ifIXsrSt5__or_IJS1_IJSt7is_sameINSt9remove_cvIT_E4typeEaES2_IS6_sES2_IS6_iES2_IS6_lES2_IS6_xES2_IS6_nEEES1_IJS2_IS6_hES2_IS6_tES2_IS6_jES2_IS6_mES2_IS6_yES2_IS6_oEEES2_IcS6_EEE5valueESt17from_chars_resultE4typeEPKcSR_RS4_i");
 +//asm (".hidden _ZSt10from_charsIiENSt9enable_ifIXsrSt5__or_IIS1_IISt7is_sameINSt9remove_cvIT_E4typeEaES2_IS6_sES2_IS6_iES2_IS6_lES2_IS6_xES2_IS6_nEEES1_IIS2_IS6_hES2_IS6_tES2_IS6_jES2_IS6_mES2_IS6_yES2_IS6_oEEES2_IcS6_EEE5valueESt17from_chars_resultE4typeEPKcSR_RS4_i");
 +#if defined(__i386__) || (defined(__powerpc__) && !defined(__powerpc64__))
-+asm (".hidden _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcENSt3pmr21polymorphic_allocatorIcEEE9_M_createERjj");
++//asm (".hidden _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcENSt3pmr21polymorphic_allocatorIcEEE9_M_createERjj");
 +asm (".hidden _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcENSt3pmr21polymorphic_allocatorIcEEE15_M_replace_coldEPcjPKcjj");
 +asm (".hidden _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcENSt3pmr21polymorphic_allocatorIcEEE9_M_mutateEjjPKcj");
 +#elif !defined(__s390x__) && !defined(__aarch64__)
-+asm (".hidden _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcENSt3pmr21polymorphic_allocatorIcEEE9_M_createERmm");
++//asm (".hidden _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcENSt3pmr21polymorphic_allocatorIcEEE9_M_createERmm");
 +asm (".hidden _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcENSt3pmr21polymorphic_allocatorIcEEE15_M_replace_coldEPcmPKcmm");
 +asm (".hidden _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcENSt3pmr21polymorphic_allocatorIcEEE9_M_mutateEmmPKcm");
 +asm (".hidden _ZSt10from_charsIiLi0EESt17from_chars_resultPKcS2_RT_i");
