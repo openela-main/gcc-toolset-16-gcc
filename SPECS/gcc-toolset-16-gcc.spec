@@ -186,7 +186,7 @@ BuildRequires: gcc-toolset-%{gts_ver}-devel
 Summary: GCC version %{gcc_major}
 Name: %{?scl_prefix}gcc
 Version: %{gcc_version}
-Release: %{gcc_release}.2%{?dist}
+Release: %{gcc_release}.4%{?dist}
 # License notes for some of the less obvious ones:
 #   gcc/doc/cppinternals.texi: Linux-man-pages-copyleft-2-para
 #   isl: MIT, BSD-2-Clause
@@ -377,6 +377,11 @@ Patch10: gcc16-rh1574936.patch
 Patch11: gcc16-d-shared-libphobos.patch
 Patch12: gcc16-pr119006.patch
 Patch13: gcc16-pr126667.patch
+Patch14: gcc16-pr127656.patch
+Patch15: gcc16-cve-2026-114691.patch
+Patch16: gcc16-pr127666.patch
+Patch17: gcc16-pr124370.patch
+Patch18: gcc16-cve-2026-114690.patch
 
 Patch50: isl-rh2155127.patch
 
@@ -757,6 +762,11 @@ so that there cannot be any synchronization problems.
 %patch -P11 -p0 -b .d-shared-libphobos~
 %patch -P12 -p0 -b .pr119006~
 %patch -P13 -p0 -b .pr126667~
+%patch -P14 -p1 -b .pr127656~
+%patch -P15 -p1 -b .cve-2026-114691~
+%patch -P16 -p1 -b .pr127666~
+%patch -P17 -p1 -b .pr124370~
+%patch -P18 -p1 -b .cve-2026-114690.patch~
 
 %patch -P100 -p1 -b .fortran-fdec-duplicates~
 
@@ -3078,6 +3088,15 @@ fi
 %endif
 
 %changelog
+* Tue Nov 03 2026 Tomasz Kamiński <tkaminsk@redhat.com> - 16.2.1-1.4
+- fix CVE-2026-114691 (RHEL-297289)
+- fix CVE-2026-115456, PR libstdc++/127666 (RHEL-297379)
+- fix CVE-2026-115455, PR libstdc++/124370 (RHEL-297092)
+- fix CVE-2026-114690 (RHEL-297383)
+
+* Wed Oct 07 2026 Jonathan Wakely <jwakely@redhat.com> - 16.2.1-1.3
+- fix CVE-2026-102010, PR libstdc++/127656 (RHEL-272103)
+
 * Thu Sep 17 2026 Marek Polacek <polacek@redhat.com> 16.2.1-1.2
 - bump for rebuild (RHEL-219260)
 
